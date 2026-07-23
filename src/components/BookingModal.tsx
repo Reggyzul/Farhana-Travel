@@ -60,7 +60,7 @@ FARHANA TRAVEL
 ⛩️ Tujuan : ${car.name} (${duration} Hari)
 
 🧳 Barang Bawaan : ${notes || '-'}
-💰 TARIF : Mulai Rp 150.000 / Hari
+💰 TARIF : Mulai 150 Ribu-an
 
 Note : PESAN TIKET KE DRIVER DILUAR TANGGUNG JAWAB KAMI`;
 
@@ -105,7 +105,7 @@ Note : PESAN TIKET KE DRIVER DILUAR TANGGUNG JAWAB KAMI`;
                   {car.name}
                 </h3>
                 <p className="font-display font-extrabold text-base text-[#25D366] text-left">
-                  Mulai Rp 150.000 / Hari
+                  Mulai 150 Ribu-an
                 </p>
               </div>
 

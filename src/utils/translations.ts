@@ -19,7 +19,7 @@ export const TRANSLATIONS: Record<'ID' | 'EN', TranslationKeys> = {
     hero_title_1: "FARHANA TRAVEL",
     hero_title_2: "SEWA MOBIL ERTIGA TUBAN",
     hero_tagline: "Menemani Perjalanan Anda Sepenuh Hati",
-    hero_subtitle: "Penyedia sewa mobil terpercaya di Jatirogo, Tuban. Armada Suzuki Ertiga bersih, nyaman, dan irit dengan tarif terjangkau mulai Rp 150.000 per hari.",
+    hero_subtitle: "Penyedia sewa mobil terpercaya di Jatirogo, Tuban. Armada Suzuki Ertiga bersih, nyaman, dan irit dengan tarif terjangkau mulai 150 ribu-an.",
     hero_cta_wa: "Pesan Sekarang via WhatsApp",
     hero_cta_cars: "Lihat Tarif & Detail Mobil",
 
@@ -41,8 +41,8 @@ export const TRANSLATIONS: Record<'ID' | 'EN', TranslationKeys> = {
     strength_clean_desc: "Kondisi unit selalu rutin diservis, bersih, wangi, dan dingin siap menemani perjalanan jauh.",
     strength_driver_title: "Pelayanan Sepenuh Hati",
     strength_driver_desc: "Ramah, responsif, dan mengutamakan kenyamanan serta keamanan pelanggan sepanjang perjalanan.",
-    strength_price_title: "Tarif Hemat Mulai 150 Ribu",
-    strength_price_desc: "Biaya sewa sangat terjangkau mulai dari Rp 150.000 / hari tanpa biaya tersembunyi.",
+    strength_price_title: "Tarif Hemat Mulai 150 Ribu-an",
+    strength_price_desc: "Biaya sewa sangat terjangkau mulai 150 ribu-an tanpa biaya tersembunyi.",
     strength_time_title: "Layanan Fleksibel 24 Jam",
     strength_time_desc: "Siap melayani kebutuhan transportasi antar-jemput dan perjalanan wisata kapan saja.",
 
@@ -61,7 +61,7 @@ export const TRANSLATIONS: Record<'ID' | 'EN', TranslationKeys> = {
 
     // Cars Section
     cars_tag: "ARMADA & TARIF SEWA",
-    cars_title: "Suzuki Ertiga - Mulai 150 Ribu / Hari",
+    cars_title: "Suzuki Ertiga - Mulai 150 Ribu-an",
     cars_desc: "Nikmati perjalanan yang nyaman, lapang, dan irit bersama Suzuki Ertiga dari Farhana Travel.",
     cars_seats: "Kursi",
     cars_transmission_auto: "Matic",
@@ -123,7 +123,7 @@ export const TRANSLATIONS: Record<'ID' | 'EN', TranslationKeys> = {
     // Footer
     footer_pre_title: "FARHANA TRAVEL",
     footer_pre_desc: "Menemani Perjalanan Anda Sepenuh Hati",
-    footer_desc: "Jasa persewaan mobil Suzuki Ertiga terpercaya di Tuban. Siap melayani kebutuhan perjalanan wisata, keluarga, dan dinas dengan armada bersih, nyaman, dan harga terjangkau mulai 150 ribu perhari.",
+    footer_desc: "Jasa persewaan mobil Suzuki Ertiga terpercaya di Tuban. Siap melayani kebutuhan perjalanan wisata, keluarga, dan dinas dengan armada bersih, nyaman, dan harga terjangkau mulai 150 ribu-an.",
     footer_office: "Ds. Kebonharjo RT 01 RW 04, Kec. Jatirogo, Kab. Tuban",
     footer_hubungi: "Kontak Resmi",
     footer_follow: "Media Sosial Resmi",
@@ -153,7 +153,7 @@ export const TRANSLATIONS: Record<'ID' | 'EN', TranslationKeys> = {
     hero_title_1: "FARHANA TRAVEL",
     hero_title_2: "SUZUKI ERTIGA RENTAL TUBAN",
     hero_tagline: "Menemani Perjalanan Anda Sepenuh Hati",
-    hero_subtitle: "Trusted car rental service in Jatirogo, Tuban. Clean, comfortable, and fuel-efficient Suzuki Ertiga starting from IDR 150,000 / day.",
+    hero_subtitle: "Trusted car rental service in Jatirogo, Tuban. Clean, comfortable, and fuel-efficient Suzuki Ertiga starting from IDR 150,000-ish.",
     hero_cta_wa: "Book Now via WhatsApp",
     hero_cta_cars: "View Fleet Details",
 
@@ -175,8 +175,8 @@ export const TRANSLATIONS: Record<'ID' | 'EN', TranslationKeys> = {
     strength_clean_desc: "Vehicles are regularly serviced, clean, and cool with double-blower AC.",
     strength_driver_title: "Heartfelt Service",
     strength_driver_desc: "Friendly, responsive, and prioritizing customer comfort throughout the journey.",
-    strength_price_title: "Affordable Rates from 150k",
-    strength_price_desc: "Very affordable rental starting from IDR 150,000 / day with no hidden costs.",
+    strength_price_title: "Affordable Rates from 150k-ish",
+    strength_price_desc: "Very affordable rental starting from IDR 150,000-ish with no hidden costs.",
     strength_time_title: "24/7 Flexible Service",
     strength_time_desc: "Ready to serve airport transfers, local travel, and family trips anytime.",
 
@@ -195,7 +195,7 @@ export const TRANSLATIONS: Record<'ID' | 'EN', TranslationKeys> = {
 
     // Cars Section
     cars_tag: "FLEET & RATES",
-    cars_title: "Suzuki Ertiga - Starts 150k / Day",
+    cars_title: "Suzuki Ertiga - Starts 150k-ish",
     cars_desc: "Enjoy a smooth, spacious, and comfortable trip with Suzuki Ertiga from Farhana Travel.",
     cars_seats: "Seats",
     cars_transmission_auto: "Automatic",
@@ -257,7 +257,7 @@ export const TRANSLATIONS: Record<'ID' | 'EN', TranslationKeys> = {
     // Footer
     footer_pre_title: "FARHANA TRAVEL",
     footer_pre_desc: "Menemani Perjalanan Anda Sepenuh Hati",
-    footer_desc: "Trusted Suzuki Ertiga car rental in Tuban. Serving family tours, business duties, and local trips from IDR 150,000 per day.",
+    footer_desc: "Trusted Suzuki Ertiga car rental in Tuban. Serving family tours, business duties, and local trips starting from 150k-ish.",
     footer_office: "Ds. Kebonharjo RT 01 RW 04, Kec. Jatirogo, Kab. Tuban",
     footer_hubungi: "Official Contact",
     footer_follow: "Official Social Media",

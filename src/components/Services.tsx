@@ -76,7 +76,7 @@ FARHANA TRAVEL
 ⛩️ Tujuan : ${routeTitle}
 
 🧳 Barang Bawaan : 
-💰 TARIF : Mulai Rp 150.000 / Hari
+💰 TARIF : Mulai 150 Ribu-an
 
 Note : PESAN TIKET KE DRIVER DILUAR TANGGUNG JAWAB KAMI`;
     window.open(`https://api.whatsapp.com/send?phone=${waNumber}&text=${encodeURIComponent(message)}`, '_blank', 'noreferrer');
@@ -96,7 +96,7 @@ Note : PESAN TIKET KE DRIVER DILUAR TANGGUNG JAWAB KAMI`;
           </h2>
           <p className="font-sans text-gray-700 text-sm sm:text-base font-medium leading-relaxed bg-white border border-gray-200/80 p-4 rounded-2xl shadow-sm max-w-2xl mx-auto">
             <span className="text-[#dc2626] font-bold block text-base sm:text-lg mb-1">
-              Tarif Hemat Terjangkau Mulai Rp 150.000 / Hari
+              Tarif Hemat Terjangkau Mulai 150 Ribu-an
             </span>
             Menemani perjalanan Anda sepenuh hati dengan armada Suzuki Ertiga di Tuban, Surabaya, Juanda, Tanjung Perak, Sidoarjo, Gresik, Lamongan, Malang, dan sekitarnya.
           </p>

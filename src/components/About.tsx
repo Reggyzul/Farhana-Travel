@@ -65,7 +65,7 @@ export default function About({ lang }: AboutProps) {
                 />
                 <div className="absolute top-3 left-3 bg-[#25D366] text-white font-display font-bold text-[10px] px-2.5 py-1 rounded-full shadow flex items-center gap-1">
                   <Sparkles className="w-3 h-3" />
-                  <span>Sewa Mulai 150rb/Hari</span>
+                  <span>Sewa Mulai 150 Ribu-an</span>
                 </div>
               </div>
 
@@ -122,7 +122,7 @@ export default function About({ lang }: AboutProps) {
                 <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
                 <div>
                   <h4 className="font-display font-bold text-xs text-gray-900">Tarif Transparan & Hemat</h4>
-                  <p className="text-[11px] text-gray-500 leading-normal">Mulai Rp 150.000 / hari tanpa biaya terselubung.</p>
+                  <p className="text-[11px] text-gray-500 leading-normal">Mulai 150 Ribu-an tanpa biaya terselubung.</p>
                 </div>
               </div>
             </div>
