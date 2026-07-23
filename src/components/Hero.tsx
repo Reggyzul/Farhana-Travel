@@ -8,7 +8,7 @@ interface HeroProps {
 }
 
 export default function Hero({ onRentClick }: HeroProps) {
-  // Booking Form State matching original simple inputs
+  // Booking Form State matching screenshot inputs
   const [nama, setNama] = useState('');
   const [asal, setAsal] = useState('');
   const [tujuan, setTujuan] = useState('');
@@ -87,19 +87,15 @@ Note : PESAN TIKET KE DRIVER DILUAR TANGGUNG JAWAB KAMI`;
           {/* Grid Layout inside Hero Card */}
           <div className="relative z-10 w-full p-6 sm:p-10 lg:p-14 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             
-            {/* Left Column: Heading & Description */}
+            {/* Left Column: Heading & Description matching screenshot */}
             <div className="lg:col-span-7 space-y-6 text-left text-white">
               
               <motion.div
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                className="space-y-3"
+                className="space-y-2"
               >
-                <span className="inline-block px-3.5 py-1 rounded-full bg-red-500/20 border border-red-500/40 text-red-400 text-xs font-bold uppercase tracking-wider">
-                  Menemani Perjalanan Anda Sepenuh Hati
-                </span>
-                
                 <h1 className="font-display font-black text-4xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-tight">
                   Travel bersama <br />
                   <span className="text-[#dc2626]">Farhana Travel</span>
@@ -115,7 +111,7 @@ Note : PESAN TIKET KE DRIVER DILUAR TANGGUNG JAWAB KAMI`;
                 Travel bersama Farhana Travel, kami menawarkan layanan rental mobil Suzuki Ertiga bersih & nyaman (mulai Rp 300rb/hari) di daerah Jawa Timur, terutama pada rute travel Tuban, Jatirogo, Bojonegoro, Lamongan, Surabaya, Malang, dan sekitarnya.
               </motion.p>
 
-              {/* Action Buttons: Pesan & Rute */}
+              {/* Action Buttons: Pesan & Rute matching screenshot */}
               <motion.div 
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -124,9 +120,9 @@ Note : PESAN TIKET KE DRIVER DILUAR TANGGUNG JAWAB KAMI`;
               >
                 <button
                   onClick={handleDirectPesanWA}
-                  className="bg-[#dc2626] hover:bg-[#b91c1c] text-white font-sans font-bold text-sm px-7 py-3 rounded-xl shadow-lg hover:shadow-red-600/30 transition-all flex items-center gap-2 cursor-pointer"
+                  className="bg-[#dc2626] hover:bg-[#b91c1c] text-white font-sans font-bold text-sm px-7 py-3 rounded-full shadow-lg hover:shadow-red-600/30 transition-all flex items-center gap-2 cursor-pointer"
                 >
-                  <MessageCircle className="w-5 h-5 fill-current" />
+                  <MessageCircle className="w-4.5 h-4.5 fill-current" />
                   <span>Pesan</span>
                 </button>
 
@@ -140,28 +136,30 @@ Note : PESAN TIKET KE DRIVER DILUAR TANGGUNG JAWAB KAMI`;
 
             </div>
 
-            {/* Right Column: Floating White Booking Card matching original simple UI */}
+            {/* Right Column: Floating White Booking Card matching reference screenshot 1:1 */}
             <div className="lg:col-span-5 w-full">
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.15 }}
-                className="bg-white rounded-3xl p-6 sm:p-7 shadow-2xl border border-gray-100 text-gray-800"
+                className="bg-white rounded-3xl p-6 sm:p-7 shadow-2xl text-gray-800 relative overflow-hidden border-b-4 border-[#dc2626]"
               >
-                {/* Form Header */}
+                {/* Form Header matching screenshot */}
                 <div className="flex items-center gap-2.5 pb-4 mb-4 border-b border-gray-100 text-left">
-                  <Ticket className="w-5 h-5 text-[#dc2626]" />
-                  <h3 className="font-display font-bold text-base text-gray-900">
+                  <div className="w-8 h-8 rounded-lg bg-gray-50 border border-gray-200 flex items-center justify-center text-gray-700">
+                    <Ticket className="w-4 h-4 text-gray-700" />
+                  </div>
+                  <h3 className="font-display font-bold text-base text-gray-800">
                     Info Pemesanan
                   </h3>
                 </div>
 
-                {/* Form Inputs matching original simple layout */}
+                {/* Form Inputs matching screenshot 1:1 */}
                 <form onSubmit={handlePesanSekarang} className="space-y-4 text-left">
                   
                   {/* Nama Anda */}
                   <div className="space-y-1">
-                    <label className="block text-xs font-bold text-gray-700">
+                    <label className="block text-xs font-semibold text-gray-600">
                       Nama anda
                     </label>
                     <input
@@ -169,58 +167,55 @@ Note : PESAN TIKET KE DRIVER DILUAR TANGGUNG JAWAB KAMI`;
                       required
                       value={nama}
                       onChange={(e) => setNama(e.target.value)}
-                      placeholder="Masukkan nama anda"
-                      className="w-full bg-slate-50 border border-gray-200 rounded-xl px-3.5 py-2.5 text-sm focus:ring-2 focus:ring-[#dc2626] focus:bg-white transition-all font-sans text-gray-800"
+                      className="w-full bg-[#f8fafc] border border-gray-200 rounded-xl px-3.5 py-2.5 text-sm focus:ring-2 focus:ring-[#dc2626] focus:bg-white transition-all font-sans text-gray-800 outline-none"
                     />
                   </div>
 
                   {/* Asal & Tujuan Side by Side */}
                   <div className="grid grid-cols-2 gap-3">
                     <div className="space-y-1">
-                      <label className="block text-xs font-bold text-gray-700">
+                      <label className="block text-xs font-semibold text-gray-600">
                         Asal
                       </label>
                       <input
                         type="text"
                         value={asal}
                         onChange={(e) => setAsal(e.target.value)}
-                        placeholder="Misal: Jatirogo"
-                        className="w-full bg-slate-50 border border-gray-200 rounded-xl px-3 py-2.5 text-sm focus:ring-2 focus:ring-[#dc2626] focus:bg-white transition-all font-sans text-gray-800"
+                        className="w-full bg-[#f8fafc] border border-gray-200 rounded-xl px-3 py-2.5 text-sm focus:ring-2 focus:ring-[#dc2626] focus:bg-white transition-all font-sans text-gray-800 outline-none"
                       />
                     </div>
 
                     <div className="space-y-1">
-                      <label className="block text-xs font-bold text-gray-700">
+                      <label className="block text-xs font-semibold text-gray-600">
                         Tujuan
                       </label>
                       <input
                         type="text"
                         value={tujuan}
                         onChange={(e) => setTujuan(e.target.value)}
-                        placeholder="Misal: Surabaya"
-                        className="w-full bg-slate-50 border border-gray-200 rounded-xl px-3 py-2.5 text-sm focus:ring-2 focus:ring-[#dc2626] focus:bg-white transition-all font-sans text-gray-800"
+                        className="w-full bg-[#f8fafc] border border-gray-200 rounded-xl px-3 py-2.5 text-sm focus:ring-2 focus:ring-[#dc2626] focus:bg-white transition-all font-sans text-gray-800 outline-none"
                       />
                     </div>
                   </div>
 
                   {/* Jumlah Penumpang */}
                   <div className="space-y-1">
-                    <label className="block text-xs font-bold text-gray-700">
+                    <label className="block text-xs font-semibold text-gray-600">
                       Jumlah Penumpang
                     </label>
                     <select
                       value={penumpang}
                       onChange={(e) => setPenumpang(e.target.value)}
-                      className="w-full bg-slate-50 border border-gray-200 rounded-xl px-3.5 py-2.5 text-sm focus:ring-2 focus:ring-[#dc2626] focus:bg-white transition-all font-sans text-gray-800 cursor-pointer"
+                      className="w-full bg-[#f8fafc] border border-gray-200 rounded-xl px-3.5 py-2.5 text-sm focus:ring-2 focus:ring-[#dc2626] focus:bg-white transition-all font-sans text-gray-800 cursor-pointer outline-none"
                     >
                       <option value="1 Orang">1 Orang</option>
                       <option value="2 Orang">2 Orang</option>
                       <option value="3-4 Orang">3 - 4 Orang</option>
-                      <option value="5-7 Orang (Rombongan)">5 - 7 Orang (Satu Mobil Ertiga)</option>
+                      <option value="5-7 Orang (Rombongan)">5 - 7 Orang</option>
                     </select>
                   </div>
 
-                  {/* Red Submit Button: Pesan Sekarang */}
+                  {/* Bright Red Submit Button: Pesan Sekarang */}
                   <div className="pt-2">
                     <button
                       type="submit"
