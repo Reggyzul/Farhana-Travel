@@ -45,8 +45,8 @@ export default function Advantages({ onBookClick }: AdvantagesProps) {
       badge: 'Hemat & Jujur',
       badgeBg: 'bg-emerald-50 text-emerald-700',
       title: 'Harga Murah & Tanpa Biaya Tersembunyi',
-      description: 'Tarif sewa & travel mulai dari Rp 200.000 / Hari. Sangat transparan tanpa biaya tersembunyi, cocok untuk kantong keluarga maupun bisnis.',
-      highlights: ['Mulai Rp 200rb/Hari', 'Tanpa Biaya Siluman', 'DP Ringan / Bayar di Tempat']
+      description: 'Tarif sewa & travel mulai dari Rp 150.000 / Hari. Sangat transparan tanpa biaya tersembunyi, cocok untuk kantong keluarga maupun bisnis.',
+      highlights: ['Mulai Rp 150rb/Hari', 'Tanpa Biaya Siluman', 'DP Ringan / Bayar di Tempat']
     },
     {
       id: 'door-to-door',
@@ -79,7 +79,7 @@ export default function Advantages({ onBookClick }: AdvantagesProps) {
 
   const statItems = [
     { label: 'Pelanggan Puas', value: '500+', subText: 'Perjalanan Sukses' },
-    { label: 'Tarif Sewa', value: '200 Rb', subText: 'Mulai per Hari' },
+    { label: 'Tarif Sewa', value: '150 Rb', subText: 'Mulai per Hari' },
     { label: 'Jaminan Waktu', value: '100%', subText: 'On-Time Departure' },
     { label: 'Layanan CS', value: '24/7', subText: 'WhatsApp Fast Response' }
   ];
@@ -223,7 +223,7 @@ export default function Advantages({ onBookClick }: AdvantagesProps) {
                     onClick={onBookClick}
                     className="bg-white/15 hover:bg-white/25 text-white border border-white/20 font-sans font-bold text-xs uppercase px-6 py-3.5 rounded-xl transition-all cursor-pointer"
                   >
-                    Lihat Armada (Rp 200rb)
+                    Lihat Armada (Rp 150rb)
                   </button>
                 )}
               </div>

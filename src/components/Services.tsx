@@ -7,24 +7,21 @@ export default function Services() {
     {
       title: 'Tuban – Bandara Juanda (Surabaya)',
       subtitle: 'Drop Off & Shuttle Bandara 24 Jam',
-      desc: 'Layanan antar-jemput tepat waktu ke Bandara Juanda untuk penerbangan dometik & internasional.',
-      price: 'Mulai Rp 200.000',
+      desc: 'Layanan antar-jemput tepat waktu ke Bandara Juanda untuk penerbangan domestik & internasional.',
       icon: <Plane className="w-5 h-5" />,
-      badge: 'Favorit Shuttle'
+      badge: 'Shuttle Bandara'
     },
     {
       title: 'Tuban – Pelabuhan Tanjung Perak',
       subtitle: 'Shuttle Penyeberangan & Kapal Laut',
       desc: 'Pengantaran nyaman langsung ke dermaga Pelabuhan Tanjung Perak Surabaya tanpa repot.',
-      price: 'Mulai Rp 200.000',
       icon: <Anchor className="w-5 h-5" />,
-      badge: 'Antar Jemput Pelabuhan'
+      badge: 'Shuttle Pelabuhan'
     },
     {
       title: 'Tuban – Sidoarjo & Krian',
       subtitle: 'Travel Harian & Perjalanan Keluarga',
       desc: 'Rute harian pintu ke pintu (door to door) menuju area Sidoarjo, Krian, dan sekitarnya.',
-      price: 'Mulai Rp 200.000',
       icon: <MapPin className="w-5 h-5" />,
       badge: 'Door to Door'
     },
@@ -32,7 +29,6 @@ export default function Services() {
       title: 'Surabaya – Gresik',
       subtitle: 'Rute Bisnis & Industri Gresik',
       desc: 'Antar jemput instan Surabaya menuju kawasan industri Gresik, Kebomas, Manyar & sekitarnya.',
-      price: 'Mulai Rp 200.000',
       icon: <Building2 className="w-5 h-5" />,
       badge: 'Rute Bisnis'
     },
@@ -40,7 +36,6 @@ export default function Services() {
       title: 'Surabaya – Lamongan & Babat',
       subtitle: 'Layanan Shuttle & Travel Harian',
       desc: 'Perjalanan aman & nyaman menghubungkan Kota Surabaya dengan Lamongan, Babat, hingga Tuban.',
-      price: 'Mulai Rp 200.000',
       icon: <Navigation className="w-5 h-5" />,
       badge: 'Perjalanan Harian'
     },
@@ -48,7 +43,6 @@ export default function Services() {
       title: 'Tuban – Bojonegoro – Lamongan',
       subtitle: 'Rute Utama Plat S',
       desc: 'Layanan antar-kota harian paling populer di daerah Tuban, Bojonegoro, dan Lamongan.',
-      price: 'Mulai Rp 200.000',
       icon: <Navigation className="w-5 h-5" />,
       badge: 'Rute Utama'
     },
@@ -56,7 +50,6 @@ export default function Services() {
       title: 'Tuban / Jatirogo – Malang & Batu',
       subtitle: 'Perjalanan Wisata & Perjalanan Dinas',
       desc: 'Paket travel & sewa mobil keluarga menuju destinasi wisata favorit Malang & Kota Batu.',
-      price: 'Mulai Rp 200.000',
       icon: <Compass className="w-5 h-5" />,
       badge: 'Paket Wisata'
     },
@@ -64,7 +57,6 @@ export default function Services() {
       title: 'Sewa Suzuki Ertiga (All-In / Lepas Kunci)',
       subtitle: 'Layanan Spesial Farhana Travel',
       desc: 'Armada bersih, harum, AC dingin double blower, siap ditemani driver ramah & santun.',
-      price: 'Mulai Rp 200.000 / Hari',
       icon: <Car className="w-5 h-5" />,
       badge: 'Armada Unggulan'
     }
@@ -84,7 +76,7 @@ FARHANA TRAVEL
 ⛩️ Tujuan : ${routeTitle}
 
 🧳 Barang Bawaan : 
-💰 TARIF : Mulai Rp 200.000 / Hari
+💰 TARIF : Mulai Rp 150.000 / Hari
 
 Note : PESAN TIKET KE DRIVER DILUAR TANGGUNG JAWAB KAMI`;
     window.open(`https://api.whatsapp.com/send?phone=${waNumber}&text=${encodeURIComponent(message)}`, '_blank', 'noreferrer');
@@ -102,12 +94,15 @@ Note : PESAN TIKET KE DRIVER DILUAR TANGGUNG JAWAB KAMI`;
           <h2 className="font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl text-gray-900 tracking-tight">
             Pilihan Rute Farhana Travel
           </h2>
-          <p className="font-sans text-gray-600 text-sm sm:text-base leading-relaxed">
+          <p className="font-sans text-gray-700 text-sm sm:text-base font-medium leading-relaxed bg-white border border-gray-200/80 p-4 rounded-2xl shadow-sm max-w-2xl mx-auto">
+            <span className="text-[#dc2626] font-bold block text-base sm:text-lg mb-1">
+              Tarif Hemat Terjangkau Mulai Rp 150.000 / Hari
+            </span>
             Menemani perjalanan Anda sepenuh hati dengan armada Suzuki Ertiga di Tuban, Surabaya, Juanda, Tanjung Perak, Sidoarjo, Gresik, Lamongan, Malang, dan sekitarnya.
           </p>
         </div>
 
-        {/* Route Cards Grid */}
+        {/* Route Cards Grid (Without price tag on each card) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {routesList.map((route, idx) => (
             <motion.div
@@ -120,23 +115,20 @@ Note : PESAN TIKET KE DRIVER DILUAR TANGGUNG JAWAB KAMI`;
             >
               <div className="space-y-3">
                 {/* Top Badge & Icon */}
-                <div className="flex justify-between items-start">
+                <div className="flex justify-between items-center">
                   <div className="w-10 h-10 rounded-xl bg-red-50 text-[#dc2626] flex items-center justify-center font-bold group-hover:bg-[#dc2626] group-hover:text-white transition-colors duration-300 shadow-sm">
                     {route.icon}
                   </div>
-                  <span className="bg-emerald-50 text-emerald-700 font-bold text-[11px] px-2.5 py-1 rounded-full border border-emerald-100">
-                    {route.price}
+                  <span className="bg-slate-100 text-slate-700 font-bold text-[10px] px-2.5 py-1 rounded-full uppercase tracking-wider">
+                    {route.badge}
                   </span>
                 </div>
 
                 <div>
-                  <span className="text-[10px] font-bold text-[#dc2626] uppercase tracking-wider">
-                    {route.badge}
-                  </span>
-                  <h3 className="font-display font-bold text-base text-gray-900 leading-snug group-hover:text-[#dc2626] transition-colors">
+                  <h3 className="font-display font-bold text-base text-gray-900 leading-snug group-hover:text-[#dc2626] transition-colors mt-1">
                     {route.title}
                   </h3>
-                  <p className="text-[11px] text-gray-500 font-semibold mt-0.5">
+                  <p className="text-[11px] text-[#dc2626] font-semibold mt-0.5">
                     {route.subtitle}
                   </p>
                 </div>

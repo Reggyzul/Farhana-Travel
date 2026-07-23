@@ -80,7 +80,7 @@ FARHANA TRAVEL
 ⛩️ Tujuan : 
 
 🧳 Barang Bawaan : 
-💰 TARIF : Mulai Rp 200.000 / Hari
+💰 TARIF : Mulai Rp 150.000 / Hari
 
 Note : PESAN TIKET KE DRIVER DILUAR TANGGUNG JAWAB KAMI`);
     window.open(`https://api.whatsapp.com/send?phone=${waNumber}&text=${text}`, '_blank', 'noreferrer');
@@ -106,7 +106,7 @@ Note : PESAN TIKET KE DRIVER DILUAR TANGGUNG JAWAB KAMI`);
         {/* 2. Rute & Layanan Travel */}
         <Services />
 
-        {/* 3. Armada & Tarif (Suzuki Ertiga mulai 200rb) */}
+        {/* 3. Armada & Tarif (Suzuki Ertiga mulai 150rb) */}
         <CarList onSelectCar={handleSelectCar} />
 
         {/* 4. Keunggulan Farhana Travel (Di bawah Armada Unggulan) */}

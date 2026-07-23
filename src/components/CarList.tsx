@@ -24,7 +24,7 @@ FARHANA TRAVEL
 ⛩️ Tujuan : 
 
 🧳 Barang Bawaan : 
-💰 TARIF : Mulai Rp 200.000 / Hari (${carName})
+💰 TARIF : Mulai Rp 150.000 / Hari (${carName})
 
 Note : PESAN TIKET KE DRIVER DILUAR TANGGUNG JAWAB KAMI`;
     window.open(`https://api.whatsapp.com/send?phone=${waNumber}&text=${encodeURIComponent(message)}`, '_blank', 'noreferrer');
@@ -40,7 +40,7 @@ Note : PESAN TIKET KE DRIVER DILUAR TANGGUNG JAWAB KAMI`;
             ARMADA UNGGULAN
           </span>
           <h2 className="font-display font-extrabold text-3xl sm:text-4xl text-gray-900 tracking-tight">
-            Suzuki Ertiga – Mulai Rp 200.000 / Hari
+            Suzuki Ertiga – Mulai Rp 150.000 / Hari
           </h2>
           <p className="font-sans text-gray-600 text-sm leading-relaxed">
             Pilihan armada terbaik keluarga, bersih, harum, dingin, dan sangat irit untuk perjalanan Anda.
@@ -62,7 +62,7 @@ Note : PESAN TIKET KE DRIVER DILUAR TANGGUNG JAWAB KAMI`;
               {/* Car Image Column */}
               <div className="lg:col-span-6 bg-white p-8 flex flex-col items-center justify-center relative border-b lg:border-b-0 lg:border-r border-gray-200">
                 <div className="absolute top-4 left-4 bg-[#dc2626] text-white font-sans font-bold text-xs px-3.5 py-1.5 rounded-full shadow">
-                  MULAI 200 RB / HARI
+                  MULAI 150 RB / HARI
                 </div>
                 
                 <img
@@ -102,7 +102,7 @@ Note : PESAN TIKET KE DRIVER DILUAR TANGGUNG JAWAB KAMI`;
                     <div className="text-right">
                       <div className="text-[11px] text-gray-400 font-bold uppercase">Harga Sewa</div>
                       <div className="font-display font-black text-xl text-[#dc2626]">
-                        Rp 200.000 <span className="text-xs font-normal text-gray-500">/Hari</span>
+                        Rp 150.000 <span className="text-xs font-normal text-gray-500">/Hari</span>
                       </div>
                     </div>
                   </div>

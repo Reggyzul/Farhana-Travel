@@ -34,7 +34,7 @@ FARHANA TRAVEL
 ⛩️ Tujuan : ${tujuan || 'Surabaya / Malang'}
 
 🧳 Barang Bawaan : 
-💰 TARIF : Mulai Rp 200.000 / Hari
+💰 TARIF : Mulai Rp 150.000 / Hari
 
 Note : PESAN TIKET KE DRIVER DILUAR TANGGUNG JAWAB KAMI`;
 
@@ -55,7 +55,7 @@ FARHANA TRAVEL
 ⛩️ Tujuan : 
 
 🧳 Barang Bawaan : 
-💰 TARIF : Mulai Rp 200.000 / Hari
+💰 TARIF : Mulai Rp 150.000 / Hari
 
 Note : PESAN TIKET KE DRIVER DILUAR TANGGUNG JAWAB KAMI`;
 
@@ -108,7 +108,7 @@ Note : PESAN TIKET KE DRIVER DILUAR TANGGUNG JAWAB KAMI`;
                 transition={{ duration: 0.5, delay: 0.1 }}
                 className="font-sans text-gray-300 text-sm sm:text-base leading-relaxed max-w-xl"
               >
-                Travel bersama Farhana Travel, kami menawarkan layanan rental mobil Suzuki Ertiga bersih & nyaman (mulai Rp 200rb/hari) di daerah Jawa Timur, terutama pada rute travel Tuban, Juanda, Tanjung Perak, Sidoarjo, Gresik, Lamongan, Surabaya, Malang, dan sekitarnya.
+                Travel bersama Farhana Travel, kami menawarkan layanan rental mobil Suzuki Ertiga bersih & nyaman (mulai Rp 150rb/hari) di daerah Jawa Timur, terutama pada rute travel Tuban, Juanda, Tanjung Perak, Sidoarjo, Gresik, Lamongan, Surabaya, Malang, dan sekitarnya.
               </motion.p>
 
               {/* Action Buttons: Pesan & Rute matching screenshot */}

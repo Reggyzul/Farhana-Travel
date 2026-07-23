@@ -32,7 +32,7 @@ FARHANA TRAVEL
 ⛩️ Tujuan : 
 
 🧳 Barang Bawaan : 
-💰 TARIF : Mulai Rp 200.000 / Hari
+💰 TARIF : Mulai Rp 150.000 / Hari
 
 Note : PESAN TIKET KE DRIVER DILUAR TANGGUNG JAWAB KAMI`);
     window.open(`https://api.whatsapp.com/send?phone=${waNumber}&text=${text}`, '_blank', 'noreferrer');

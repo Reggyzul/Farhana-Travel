@@ -26,7 +26,7 @@ export default function Footer({ onNavClick }: FooterProps) {
               FARHANA <span className="text-[#dc2626]">TRAVEL</span>
             </h3>
             <p className="font-sans text-xs text-gray-400">
-              Sewa Mobil Suzuki Ertiga Terpercaya di Jatirogo, Tuban – Mulai Rp 200.000 / Hari
+              Sewa Mobil Suzuki Ertiga Terpercaya di Jatirogo, Tuban – Mulai Rp 150.000 / Hari
             </p>
           </div>
 
@@ -79,7 +79,7 @@ export default function Footer({ onNavClick }: FooterProps) {
             </div>
 
             <p className="font-sans text-xs text-gray-400 leading-relaxed max-w-sm">
-              Farhana Travel siap melayani kebutuhan transportasi Anda di Jatirogo, Tuban, Juanda, Tanjung Perak, Sidoarjo, Gresik, Lamongan, Surabaya, Malang, dan sekitarnya. Mobil Suzuki Ertiga bersih, AC dingin, dan harga hemat mulai Rp 200.000 / Hari.
+              Farhana Travel siap melayani kebutuhan transportasi Anda di Jatirogo, Tuban, Juanda, Tanjung Perak, Sidoarjo, Gresik, Lamongan, Surabaya, Malang, dan sekitarnya. Mobil Suzuki Ertiga bersih, AC dingin, dan harga hemat mulai Rp 150.000 / Hari.
             </p>
 
             <div className="text-xs text-gray-300 font-sans space-y-2 pt-2 border-t border-gray-800">
@@ -109,7 +109,7 @@ export default function Footer({ onNavClick }: FooterProps) {
               </li>
               <li>
                 <button onClick={() => onNavClick('cars')} className="hover:text-white transition-colors cursor-pointer text-left w-full">
-                  • Armada Suzuki Ertiga (200rb)
+                  • Armada Suzuki Ertiga (150rb)
                 </button>
               </li>
               <li>
