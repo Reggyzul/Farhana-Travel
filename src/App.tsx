@@ -68,7 +68,21 @@ export default function App() {
 
   const handleFastWhatsApp = () => {
     const waNumber = '6285203217673';
-    const text = encodeURIComponent('Halo Farhana Travel, saya ingin memesan layanan travel / sewa mobil Suzuki Ertiga.');
+    const text = encodeURIComponent(`FORM BOOKING TICKET
+FARHANA TRAVEL
+🖊️ Nama   : 
+🗒️ Hari       : 
+📆 Tgl         : 
+⏰ Pukul    : 
+🌞 Jml PNP : 
+📲 HP/WA : 
+📍 Penjemputan : 
+⛩️ Tujuan : 
+
+🧳 Barang Bawaan : 
+💰 TARIF : Mulai Rp 300.000 / Hari
+
+Note : PESAN TIKET KE DRIVER DILUAR TANGGUNG JAWAB KAMI`);
     window.open(`https://api.whatsapp.com/send?phone=${waNumber}&text=${text}`, '_blank', 'noreferrer');
   };
 

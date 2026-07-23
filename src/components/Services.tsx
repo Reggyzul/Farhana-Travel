@@ -32,7 +32,21 @@ export default function Services() {
 
   const handleBookRoute = (routeTitle: string) => {
     const waNumber = '6285203217673';
-    const message = `Halo Farhana Travel, saya berminat memesan rute/layanan: ${routeTitle}. Mohon konfirmasi jadwal dan tarifnya.`;
+    const message = `FORM BOOKING TICKET
+FARHANA TRAVEL
+🖊️ Nama   : 
+🗒️ Hari       : 
+📆 Tgl         : 
+⏰ Pukul    : 
+🌞 Jml PNP : 
+📲 HP/WA : 
+📍 Penjemputan : 
+⛩️ Tujuan : ${routeTitle}
+
+🧳 Barang Bawaan : 
+💰 TARIF : Mulai Rp 300.000 / Hari
+
+Note : PESAN TIKET KE DRIVER DILUAR TANGGUNG JAWAB KAMI`;
     window.open(`https://api.whatsapp.com/send?phone=${waNumber}&text=${encodeURIComponent(message)}`, '_blank', 'noreferrer');
   };
 

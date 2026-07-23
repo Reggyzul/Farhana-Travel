@@ -12,7 +12,21 @@ export default function CarList({ onSelectCar }: CarListProps) {
 
   const handleWhatsAppDirect = (carName: string) => {
     const waNumber = '6285203217673';
-    const message = `Halo Farhana Travel, saya berminat sewa mobil ${carName} (Mulai Rp 300rb/hari). Mohon informasi ketersediaannya. Terima kasih!`;
+    const message = `FORM BOOKING TICKET
+FARHANA TRAVEL
+🖊️ Nama   : 
+🗒️ Hari       : 
+📆 Tgl         : 
+⏰ Pukul    : 
+🌞 Jml PNP : 
+📲 HP/WA : 
+📍 Penjemputan : 
+⛩️ Tujuan : 
+
+🧳 Barang Bawaan : 
+💰 TARIF : Mulai Rp 300.000 / Hari (${carName})
+
+Note : PESAN TIKET KE DRIVER DILUAR TANGGUNG JAWAB KAMI`;
     window.open(`https://api.whatsapp.com/send?phone=${waNumber}&text=${encodeURIComponent(message)}`, '_blank', 'noreferrer');
   };
 

@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Car } from '../types';
-import { CARS } from '../data/cars';
 import { motion, AnimatePresence } from 'motion/react';
-import { X, Send, Calendar, Clock, MapPin, User, Phone, CheckCircle, Sparkles } from 'lucide-react';
+import { X, Calendar, Clock, MapPin, User, Phone, CheckCircle, Sparkles, MessageCircle, Luggage, Navigation } from 'lucide-react';
 import { TRANSLATIONS } from '../utils/translations';
 
 interface BookingModalProps {
@@ -15,12 +14,13 @@ interface BookingModalProps {
 export default function BookingModal({ car, onClose, lang, onCarChange }: BookingModalProps) {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
+  const [hari, setHari] = useState('Senin');
   const [startDate, setStartDate] = useState('');
-  const [pickupTime, setPickupTime] = useState('08:00');
-  const [duration, setDuration] = useState(1);
-  const [includeDriver, setIncludeDriver] = useState(true);
+  const [pickupTime, setPickupTime] = useState('08:00 WIB');
+  const [passengers, setPassengers] = useState('1 Orang');
   const [pickupAddress, setPickupAddress] = useState('');
-  const [notes, setNotes] = useState('');
+  const [tujuan, setTujuan] = useState('');
+  const [barangBawaan, setBarangBawaan] = useState('');
   const [isBooked, setIsBooked] = useState(false);
 
   const t = TRANSLATIONS[lang];
@@ -29,12 +29,13 @@ export default function BookingModal({ car, onClose, lang, onCarChange }: Bookin
     if (car) {
       setName('');
       setPhone('');
+      setHari('Senin');
       setStartDate('');
-      setPickupTime('08:00');
-      setDuration(1);
-      setIncludeDriver(true);
+      setPickupTime('08:00 WIB');
+      setPassengers('1 Orang');
       setPickupAddress('');
-      setNotes('');
+      setTujuan('');
+      setBarangBawaan('');
       setIsBooked(false);
     }
   }, [car]);
@@ -43,31 +44,27 @@ export default function BookingModal({ car, onClose, lang, onCarChange }: Bookin
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!name || !phone || !startDate || !pickupAddress) {
-      alert('Mohon lengkapi semua kolom yang wajib diisi!');
+    if (!name || !phone || !pickupAddress) {
+      alert('Mohon lengkapi kolom Nama, No HP/WA, dan Alamat Penjemputan!');
       return;
     }
 
     const waNumber = '6285203217673';
-    const textTemplate = `Halo Farhana Travel, saya ingin sewa armada berikut:
+    const textTemplate = `FORM BOOKING TICKET
+FARHANA TRAVEL
+🖊️ Nama   : ${name}
+🗒️ Hari       : ${hari}
+📆 Tgl         : ${startDate || 'Hari Ini'}
+⏰ Pukul    : ${pickupTime}
+🌞 Jml PNP : ${passengers}
+📲 HP/WA : ${phone}
+📍 Penjemputan : ${pickupAddress}
+⛩️ Tujuan : ${tujuan || 'Surabaya / Malang / Tujuan'}
 
-*RESERVASI SUZUKI ERTIGA:*
-👉 Armada: *${car.name}*
-💰 Tarif: Mulai Rp 300.000 / Hari
+🧳 Barang Bawaan : ${barangBawaan || '-'}
+💰 TARIF : Mulai Rp 300.000 / Hari
 
-*JADWAL & DURASI:*
-🗓 Tanggal Sewa: ${startDate}
-⏰ Jam Jemput: ${pickupTime}
-⏳ Durasi: ${duration} Hari
-
-*DATA PELANGGAN:*
-👤 Nama: ${name}
-📞 No. WhatsApp: ${phone}
-📍 Alamat Jemput / Tujuan: ${pickupAddress}
-📝 Catatan Kebutuhan: ${notes || '-'}
-👨‍✈️ Layanan Driver: ${includeDriver ? 'Dengan Driver' : 'Tanpa Driver / Sesuai Kesepakatan'}
-
-Mohon konfirmasi ketersediaannya. Terima kasih!`;
+Note : PESAN TIKET KE DRIVER DILUAR TANGGUNG JAWAB KAMI`;
 
     const encodedText = encodeURIComponent(textTemplate);
     const waUrl = `https://api.whatsapp.com/send?phone=${waNumber}&text=${encodedText}`;
@@ -119,38 +116,41 @@ Mohon konfirmasi ketersediaannya. Terima kasih!`;
                 <img
                   src={car.image}
                   alt={car.name}
-                  className="w-full h-auto object-contain max-h-[160px]"
+                  className="w-full h-auto object-contain max-h-[160px] mx-auto"
                 />
               </div>
 
-              {/* Specs */}
-              <div className="space-y-2 border-t border-white/10 pt-4 text-xs text-slate-300">
-                <p className="font-display font-bold uppercase text-blue-400 tracking-wider text-[10px] mb-2 text-left">
-                  Fasilitas & Layanan:
-                </p>
-                <div className="space-y-1.5 text-xs text-left">
-                  <div className="flex justify-between py-1 border-b border-white/5">
-                    <span className="text-slate-400">Kapasitas:</span>
-                    <span className="font-bold text-white">7 Penumpang</span>
+              {/* Spec list */}
+              <div className="space-y-2 text-xs text-left border-t border-white/10 pt-3">
+                <p className="font-bold text-slate-300 uppercase tracking-wider text-[10px]">Fasilitas Utama:</p>
+                <div className="grid grid-cols-2 gap-2 text-slate-300">
+                  <div className="flex items-center gap-1.5 bg-white/5 p-2 rounded-lg border border-white/5">
+                    <CheckCircle className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                    <span>7 Penumpang</span>
                   </div>
-                  <div className="flex justify-between py-1 border-b border-white/5">
-                    <span className="text-slate-400">Kondisi:</span>
-                    <span className="font-bold text-white">Bersih, Harum & AC Cold</span>
+                  <div className="flex items-center gap-1.5 bg-white/5 p-2 rounded-lg border border-white/5">
+                    <CheckCircle className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                    <span>AC Double Blower</span>
                   </div>
-                  <div className="flex justify-between py-1 border-b border-white/5">
-                    <span className="text-slate-400">Pelayanan:</span>
-                    <span className="font-bold text-blue-300">Sepenuh Hati</span>
+                  <div className="flex items-center gap-1.5 bg-white/5 p-2 rounded-lg border border-white/5">
+                    <CheckCircle className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                    <span>Mobil Steril</span>
+                  </div>
+                  <div className="flex items-center gap-1.5 bg-white/5 p-2 rounded-lg border border-white/5">
+                    <CheckCircle className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                    <span>Driver Ramah</span>
                   </div>
                 </div>
               </div>
+
             </div>
 
             <div className="mt-6 pt-4 border-t border-white/10 hidden md:block text-left">
               <p className="text-[10px] text-slate-400 uppercase font-bold tracking-wider mb-1">
-                Lokasi Usaha:
+                Alamat Kantor Usaha:
               </p>
               <p className="text-xs font-semibold text-white">
-                Ds. Kebonharjo RT 01 RW 04, Jatirogo, Tuban
+                Ds. Kebonharjo RT 01 RW 04, Kec. Jatirogo, Kab. Tuban
               </p>
             </div>
           </div>
@@ -167,190 +167,197 @@ Mohon konfirmasi ketersediaannya. Terima kasih!`;
             </button>
 
             {!isBooked ? (
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-3.5">
                 <div className="space-y-1 text-left">
-                  <h4 className="font-display font-black text-xl text-gray-900 uppercase">
-                    Form Reservasi Fast Response
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-[#dc2626] bg-red-50 px-2.5 py-1 rounded-md">
+                    FORM BOOKING TICKET
+                  </span>
+                  <h4 className="font-display font-black text-xl text-gray-900 uppercase mt-1">
+                    FARHANA TRAVEL
                   </h4>
                   <p className="font-sans text-xs text-gray-500">
-                    Isi data di bawah ini untuk terhubung langsung via WhatsApp 085203217673.
+                    Isi formulir di bawah ini untuk terhubung langsung via WhatsApp.
                   </p>
                 </div>
 
-                <div className="space-y-3.5">
-                  {/* Name Input */}
-                  <div className="space-y-1">
-                    <label className="block text-xs font-bold text-gray-700 uppercase tracking-wide text-left">
-                      {t.modal_field_name} <span className="text-red-500">*</span>
-                    </label>
-                    <div className="relative">
-                      <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400">
-                        <User className="w-4 h-4" />
-                      </div>
+                <div className="space-y-3">
+                  
+                  {/* Row 1: Nama & HP/WA */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div className="space-y-1">
+                      <label className="block text-xs font-bold text-gray-700 text-left">
+                        🖊️ Nama Lengkap *
+                      </label>
                       <input
                         type="text"
                         required
                         value={name}
                         onChange={(e) => setName(e.target.value)}
-                        placeholder="Contoh: Rian Prasetya"
-                        className="block w-full pl-10 pr-3 py-2 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#2563eb] text-sm font-sans"
+                        placeholder="Masukkan Nama Anda"
+                        className="block w-full px-3 py-2 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#dc2626] text-xs font-sans bg-slate-50"
                       />
                     </div>
-                  </div>
 
-                  {/* Phone Input */}
-                  <div className="space-y-1">
-                    <label className="block text-xs font-bold text-gray-700 uppercase tracking-wide text-left">
-                      Nomor WhatsApp <span className="text-red-500">*</span>
-                    </label>
-                    <div className="relative">
-                      <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400">
-                        <Phone className="w-4 h-4" />
-                      </div>
+                    <div className="space-y-1">
+                      <label className="block text-xs font-bold text-gray-700 text-left">
+                        📲 HP / WA *
+                      </label>
                       <input
                         type="tel"
                         required
                         value={phone}
                         onChange={(e) => setPhone(e.target.value)}
                         placeholder="Contoh: 085203217673"
-                        className="block w-full pl-10 pr-3 py-2 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#2563eb] text-sm font-sans"
+                        className="block w-full px-3 py-2 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#dc2626] text-xs font-sans bg-slate-50"
                       />
                     </div>
                   </div>
 
-                  {/* Date & Time Row */}
-                  <div className="grid grid-cols-2 gap-3">
+                  {/* Row 2: Hari, Tgl & Pukul */}
+                  <div className="grid grid-cols-3 gap-2">
                     <div className="space-y-1">
-                      <label className="block text-xs font-bold text-gray-700 uppercase tracking-wide text-left">
-                        Tanggal Sewa <span className="text-red-500">*</span>
+                      <label className="block text-xs font-bold text-gray-700 text-left">
+                        🗒️ Hari
                       </label>
-                      <div className="relative">
-                        <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400">
-                          <Calendar className="w-4 h-4" />
-                        </div>
-                        <input
-                          type="date"
-                          required
-                          value={startDate}
-                          onChange={(e) => setStartDate(e.target.value)}
-                          className="block w-full pl-10 pr-3 py-2 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#2563eb] text-sm font-sans"
-                        />
-                      </div>
+                      <select
+                        value={hari}
+                        onChange={(e) => setHari(e.target.value)}
+                        className="block w-full px-2 py-2 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#dc2626] text-xs font-sans bg-slate-50 cursor-pointer"
+                      >
+                        <option value="Senin">Senin</option>
+                        <option value="Selasa">Selasa</option>
+                        <option value="Rabu">Rabu</option>
+                        <option value="Kamis">Kamis</option>
+                        <option value="Jumat">Jumat</option>
+                        <option value="Sabtu">Sabtu</option>
+                        <option value="Minggu">Minggu</option>
+                      </select>
                     </div>
 
                     <div className="space-y-1">
-                      <label className="block text-xs font-bold text-gray-700 uppercase tracking-wide text-left">
-                        Jam Jemput
+                      <label className="block text-xs font-bold text-gray-700 text-left">
+                        📆 Tanggal
                       </label>
-                      <div className="relative">
-                        <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400">
-                          <Clock className="w-4 h-4" />
-                        </div>
-                        <input
-                          type="time"
-                          value={pickupTime}
-                          onChange={(e) => setPickupTime(e.target.value)}
-                          className="block w-full pl-10 pr-3 py-2 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#2563eb] text-sm font-sans"
-                        />
-                      </div>
+                      <input
+                        type="date"
+                        value={startDate}
+                        onChange={(e) => setStartDate(e.target.value)}
+                        className="block w-full px-2 py-2 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#dc2626] text-xs font-sans bg-slate-50"
+                      />
+                    </div>
+
+                    <div className="space-y-1">
+                      <label className="block text-xs font-bold text-gray-700 text-left">
+                        ⏰ Pukul
+                      </label>
+                      <input
+                        type="text"
+                        value={pickupTime}
+                        onChange={(e) => setPickupTime(e.target.value)}
+                        placeholder="08:00 WIB"
+                        className="block w-full px-2 py-2 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#dc2626] text-xs font-sans bg-slate-50"
+                      />
                     </div>
                   </div>
 
-                  {/* Duration Slider */}
-                  <div className="space-y-1 text-left">
-                    <div className="flex justify-between items-center text-xs font-bold text-gray-700 uppercase">
-                      <span>Durasi Sewa: <strong>{duration} Hari</strong></span>
-                    </div>
-                    <input
-                      type="range"
-                      min="1"
-                      max="14"
-                      value={duration}
-                      onChange={(e) => setDuration(parseInt(e.target.value))}
-                      className="w-full h-1.5 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-[#2563eb]"
-                    />
-                    <div className="flex justify-between text-[10px] text-gray-400">
-                      <span>1 Hari</span>
-                      <span>7 Hari</span>
-                      <span>14 Hari</span>
-                    </div>
-                  </div>
-
-                  {/* Pickup Address */}
-                  <div className="space-y-1">
-                    <label className="block text-xs font-bold text-gray-700 uppercase tracking-wide text-left">
-                      Alamat Jemput / Tujuan <span className="text-red-500">*</span>
-                    </label>
-                    <div className="relative">
-                      <div className="absolute top-3 left-0 pl-3 pointer-events-none text-gray-400">
-                        <MapPin className="w-4 h-4" />
-                      </div>
-                      <textarea
+                  {/* Row 3: Penjemputan & Tujuan */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div className="space-y-1">
+                      <label className="block text-xs font-bold text-gray-700 text-left">
+                        📍 Penjemputan *
+                      </label>
+                      <input
+                        type="text"
                         required
-                        rows={2}
                         value={pickupAddress}
                         onChange={(e) => setPickupAddress(e.target.value)}
-                        placeholder="Contoh: Ds. Kebonharjo Jatirogo Tuban..."
-                        className="block w-full pl-10 pr-3 py-2 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#2563eb] text-sm font-sans"
+                        placeholder="Misal: Ds. Kebonharjo Jatirogo"
+                        className="block w-full px-3 py-2 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#dc2626] text-xs font-sans bg-slate-50"
+                      />
+                    </div>
+
+                    <div className="space-y-1">
+                      <label className="block text-xs font-bold text-gray-700 text-left">
+                        ⛩️ Tujuan
+                      </label>
+                      <input
+                        type="text"
+                        value={tujuan}
+                        onChange={(e) => setTujuan(e.target.value)}
+                        placeholder="Misal: Surabaya / Malang"
+                        className="block w-full px-3 py-2 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#dc2626] text-xs font-sans bg-slate-50"
                       />
                     </div>
                   </div>
 
-                  {/* Notes */}
-                  <div className="space-y-1">
-                    <label className="block text-xs font-bold text-gray-700 uppercase tracking-wide text-left">
-                      Catatan Kebutuhan (Opsional)
-                    </label>
-                    <textarea
-                      rows={1}
-                      value={notes}
-                      onChange={(e) => setNotes(e.target.value)}
-                      placeholder="Contoh: Acara keluarga, perjalanan luar kota..."
-                      className="block w-full px-3 py-2 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#2563eb] text-sm font-sans text-left"
-                    />
+                  {/* Row 4: Jumlah PNP & Barang Bawaan */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div className="space-y-1">
+                      <label className="block text-xs font-bold text-gray-700 text-left">
+                        🌞 Jumlah Penumpang
+                      </label>
+                      <select
+                        value={passengers}
+                        onChange={(e) => setPassengers(e.target.value)}
+                        className="block w-full px-3 py-2 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#dc2626] text-xs font-sans bg-slate-50 cursor-pointer"
+                      >
+                        <option value="1 Orang">1 Orang</option>
+                        <option value="2 Orang">2 Orang</option>
+                        <option value="3-4 Orang">3 - 4 Orang</option>
+                        <option value="5-7 Orang (Ertiga)">5 - 7 Orang (Mobil Suzuki Ertiga)</option>
+                      </select>
+                    </div>
+
+                    <div className="space-y-1">
+                      <label className="block text-xs font-bold text-gray-700 text-left">
+                        🧳 Barang Bawaan
+                      </label>
+                      <input
+                        type="text"
+                        value={barangBawaan}
+                        onChange={(e) => setBarangBawaan(e.target.value)}
+                        placeholder="Misal: 1 Koper, 2 Tas"
+                        className="block w-full px-3 py-2 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#dc2626] text-xs font-sans bg-slate-50"
+                      />
+                    </div>
                   </div>
+
+                  {/* Red Note Warning */}
+                  <div className="bg-red-50/80 border border-red-100 p-2.5 rounded-xl text-[10.5px] font-bold text-[#dc2626] text-left">
+                    Note : PESAN TIKET KE DRIVER DILUAR TANGGUNG JAWAB KAMI
+                  </div>
+
                 </div>
 
-                {/* Submit Action Button */}
-                <div className="pt-3 border-t border-gray-100 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
-                  <div className="text-left">
-                    <span className="text-[10px] text-gray-400 uppercase font-bold block">Tarif Sewa</span>
-                    <span className="font-display font-extrabold text-sm text-[#2563eb]">Mulai Rp 300.000 / Hari</span>
-                  </div>
-
+                {/* Submit button */}
+                <div className="pt-2">
                   <button
                     type="submit"
-                    className="bg-[#25D366] hover:bg-[#20ba5a] text-white font-display font-extrabold text-xs uppercase py-3.5 px-6 rounded-xl shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
-                    id="submit-booking-to-whatsapp"
+                    className="w-full bg-[#dc2626] hover:bg-[#b91c1c] text-white font-sans font-bold text-xs uppercase py-3.5 rounded-xl shadow-md hover:shadow-lg transition-all cursor-pointer flex items-center justify-center gap-2"
                   >
-                    <Send className="w-4 h-4" />
-                    <span>Kirim ke WhatsApp 085203217673</span>
+                    <MessageCircle className="w-4.5 h-4.5 fill-current" />
+                    <span>Kirim Booking Ticket via WhatsApp</span>
                   </button>
                 </div>
               </form>
             ) : (
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                className="flex flex-col items-center justify-center text-center py-12 space-y-4"
-                id="booking-success-message"
-              >
-                <div className="w-16 h-16 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600 mb-2">
+              <div className="py-12 space-y-4 text-center">
+                <div className="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto shadow-md">
                   <CheckCircle className="w-10 h-10" />
                 </div>
-                <h4 className="font-display font-bold text-2xl text-gray-900 uppercase">
-                  Pesan Terbuka di WhatsApp!
+                <h4 className="font-display font-black text-2xl text-gray-900 uppercase">
+                  Pemesanan Berhasil Dikirim!
                 </h4>
-                <p className="font-sans text-gray-600 text-sm max-w-md leading-relaxed">
-                  Silakan tekan tombol <strong>Kirim</strong> di aplikasi WhatsApp Anda untuk menyelesaikan pemesanan sewa Suzuki Ertiga di Farhana Travel.
+                <p className="font-sans text-xs text-gray-600 max-w-sm mx-auto">
+                  Silakan lanjutkan obrolan di aplikasi WhatsApp dengan Customer Service Farhana Travel.
                 </p>
                 <button
                   onClick={onClose}
-                  className="bg-[#2563eb] hover:bg-blue-700 text-white font-display font-bold text-xs uppercase px-6 py-3 rounded-xl shadow-md transition-colors cursor-pointer mt-4"
+                  className="bg-gray-900 hover:bg-black text-white text-xs font-bold px-6 py-2.5 rounded-xl transition-colors cursor-pointer"
                 >
-                  Kembali ke Website
+                  Tutup
                 </button>
-              </motion.div>
+              </div>
             )}
 
           </div>
