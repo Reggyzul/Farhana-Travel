@@ -108,7 +108,7 @@ Note : PESAN TIKET KE DRIVER DILUAR TANGGUNG JAWAB KAMI`;
                 transition={{ duration: 0.5, delay: 0.1 }}
                 className="font-sans text-gray-300 text-sm sm:text-base leading-relaxed max-w-xl"
               >
-                Travel bersama Farhana Travel, kami menawarkan perjalanan, travel dan rental mobil Suzuki Ertiga bersih & nyaman (mulai 150 ribu-an) di daerah Jawa Timur, terutama pada rute travel Tuban, Juanda, Tanjung Perak, Sidoarjo, Gresik, Lamongan, Surabaya, Malang, dan sekitarnya.
+                Travel bersama Farhana Travel, kami menawarkan perjalanan, travel dan rental mobil bersih & nyaman (mulai 150 ribu-an) di daerah Jawa Timur, terutama pada rute travel Tuban, Juanda, Tanjung Perak, Sidoarjo, Gresik, Lamongan, Surabaya, Malang, dan sekitarnya.
               </motion.p>
 
               {/* Action Buttons: Pesan & Rute matching screenshot */}
